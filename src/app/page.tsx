@@ -3,13 +3,33 @@
 import Image from "next/image";
 import { ContextualAIChat } from "@/components/ai/contextual-ai-chat";
 import { GraphPlayground } from "@/components/ai/graph-playground";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function HomePage() {
   const [currentQuery, setCurrentQuery] = useState<string | undefined>();
 
+  // Garante que a página carrega no topo mas permite scroll normal
+  useEffect(() => {
+    // Força o scroll para o topo na carga inicial
+    window.scrollTo(0, 0);
+
+    // Também retorna ao topo quando o componente é atualizado
+    const handleRouteChange = () => {
+      window.scrollTo(0, 0);
+    };
+
+    // Eventos de navegação e visibilidade
+    window.addEventListener("popstate", handleRouteChange);
+    window.addEventListener("visibilitychange", handleRouteChange);
+
+    return () => {
+      window.removeEventListener("popstate", handleRouteChange);
+      window.removeEventListener("visibilitychange", handleRouteChange);
+    };
+  }, []);
+
   return (
-    <main className="flex gap-6 min-h-screen flex-col items-center bg-gradient-to-br from-[#121212] to-[#1a1a1a] px-4 py-12 text-white">
+    <main className="flex gap-6 min-h-screen flex-col items-center bg-gradient-to-br from-[#121212] to-[#1a1a1a] px-4 py-12 text-white overflow-x-hidden">
       {/* HERO + INTRO (Moved "Como funciona" here, restyled) */}
       <section className="flex flex-col w-full max-w-7xl text-center gap-4">
         <Image

@@ -20,7 +20,7 @@ export function ContextualAIChat({ onQueryChange }: ContextualAIChatProps) {
   );
 
   return (
-    <div className="flex flex-col space-y-8">
+    <div className="flex flex-col space-y-8 overflow-hidden">
       <ChatInterface onQuerySent={handleQuery} />
       {/* no desktop o GraphPlayground é renderizado fora;
           em mobile trazemos aqui embaixo */}

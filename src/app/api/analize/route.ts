@@ -1,8 +1,6 @@
 import { fetchCamara } from "@/lib/api-utils";
 import { NextRequest, NextResponse } from "next/server";
 
-export const runtime = "edge";
-
 interface Deputy {
   id: number;
   nome: string;

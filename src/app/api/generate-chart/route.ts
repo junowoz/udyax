@@ -47,9 +47,6 @@ interface ChartInstance {
   };
 }
 
-// Set runtime configuration for API route
-export const runtime = "nodejs";
-
 /**
  * API route that generates a chart using QuickChart API
  */

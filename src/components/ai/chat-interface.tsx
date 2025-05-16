@@ -12,7 +12,7 @@ const SUGGESTIONS = [
   {
     title: "Gastos parlamentares",
     examples: [
-      "Quais deputados mais gastaram com a cota parlamentar em 2024?",
+      "Quais deputados mais gastaram com a cota parlamentar em 2023?",
       "Qual o gasto médio dos deputados com passagens aéreas?",
       "Quais os maiores gastos do Congresso Nacional nos últimos anos?",
     ],
@@ -75,7 +75,6 @@ export function ChatInterface({ onQuerySent }: ChatInterfaceProps) {
       },
     });
 
-  const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   // Auto-resize textarea as content grows
@@ -85,14 +84,6 @@ export function ChatInterface({ onQuerySent }: ChatInterfaceProps) {
       inputRef.current.style.height = `${inputRef.current.scrollHeight}px`;
     }
   }, [input]);
-
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
 
   // Hide suggestions when first message is sent
   useEffect(() => {
@@ -147,7 +138,10 @@ export function ChatInterface({ onQuerySent }: ChatInterfaceProps) {
         </h2>
       </header>
 
-      <div className="flex-grow p-4 overflow-y-auto space-y-4 scrollbar-thin scrollbar-thumb-zinc-600 scrollbar-track-zinc-800">
+      <div
+        className="flex-grow p-4 overflow-y-auto space-y-4 scrollbar-thin scrollbar-thumb-zinc-600 scrollbar-track-zinc-800"
+        style={{ maxHeight: "calc(600px - 120px)" }}
+      >
         {messages.length === 0 && showSuggestions ? (
           <div className="flex flex-col space-y-8 pt-4">
             <p className="text-center text-zinc-400">
@@ -215,8 +209,6 @@ export function ChatInterface({ onQuerySent }: ChatInterfaceProps) {
               ))}
           </>
         )}
-
-        <div ref={messagesEndRef} />
 
         {isLoading && (
           <div className="flex items-center justify-center py-6">
