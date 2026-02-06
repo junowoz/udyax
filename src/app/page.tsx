@@ -1,64 +1,101 @@
-import Image from "next/image";
+import HeaderNav from "@/components/HeaderNav";
+import Section from "@/components/Section";
+import StatusPanel from "@/components/StatusPanel";
+import CityOSDefinition from "@/components/CityOSDefinition";
+import ArchitectureGrid from "@/components/ArchitectureGrid";
+import UrbanSignals from "@/components/UrbanSignals";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="bp6-dark udy-root">
+      <HeaderNav />
+      <main className="udy-main">
+        <section id="manifesto" className="udy-hero" aria-labelledby="hero-title">
+          <div className="udy-hero-left">
+            <p className="udy-kicker">Manifesto UDYAX</p>
+            <h1 id="hero-title" className="text-balance">
+              Infraestrutura de dados para a cidade funcionar melhor.
+            </h1>
+            <p className="udy-hero-subtitle text-pretty">
+              CityOS coleta, processa, consolida e distribui dados urbanos em tempo real para operação,
+              planejamento e transparência institucional.
+            </p>
+            <ul className="udy-bullet-list">
+              <li>Interoperabilidade entre sistemas legados e novos.</li>
+              <li>Edge computing para baixa latência e resiliência.</li>
+              <li>Governança com trilha de auditoria desde a origem.</li>
+              <li>Decisão administrativa guiada por evidências.</li>
+            </ul>
+          </div>
+          <div className="udy-hero-right">
+            <StatusPanel />
+          </div>
+        </section>
+
+        <Section
+          id="cityos"
+          title="CityOS como núcleo de dados"
+          subtitle="Integração operacional, modelo urbano e distribuição confiável em uma única camada central."
+        >
+          <p className="udy-inline-manifest text-pretty">
+            Sem um núcleo de dados, a cidade opera no escuro. Com CityOS, as secretarias deixam de
+            trabalhar em silos e passam a operar sobre o mesmo contexto urbano.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+          <CityOSDefinition />
+          <h3 className="udy-inline-title">Como funciona</h3>
+          <ArchitectureGrid />
+        </Section>
+
+        <Section
+          id="fases"
+          title="3 atos do produto"
+          subtitle="Conhecer. Pensar. Compartilhar."
+        >
+          <div className="udy-acts-grid">
+            <article className="bp6-card udy-act-card">
+              <p className="udy-act-roman tabular-nums">I</p>
+              <h3 className="text-balance">Arandu</h3>
+              <p className="text-pretty">
+                Coleta e consolidação de dados urbanos em camadas de eventos, ativos e território.
+              </p>
+            </article>
+            <article className="bp6-card udy-act-card">
+              <p className="udy-act-roman tabular-nums">II</p>
+              <h3 className="text-balance">Akangatu</h3>
+              <p className="text-pretty">
+                Simulações, previsão e otimização com gêmeo digital e análise de cenários.
+              </p>
+            </article>
+            <article className="bp6-card udy-act-card">
+              <p className="udy-act-roman tabular-nums">III</p>
+              <h3 className="text-balance">Iandé</h3>
+              <p className="text-pretty">
+                Camadas públicas e linguagem operacional para ampliar transparência e compreensão cidadã.
+              </p>
+            </article>
+          </div>
+        </Section>
+
+        <Section
+          id="evidencias"
+          title="Urban Signals"
+          subtitle="Visão integrada de fontes, camadas geoespaciais e indicadores urbanos em uma sala operacional."
+        >
+          <UrbanSignals />
+        </Section>
+
+        <Section
+          id="casos"
+          title="Casos e inspiração internacional"
+          subtitle="Referências de práticas públicas de dados e infraestrutura digital urbana."
+        >
+          <ul className="udy-cases-list">
+            <li>Estônia: X-Road como referência de interoperabilidade e soberania digital estatal.</li>
+            <li>Barcelona: Sentilo e abordagem de plataforma para dados urbanos em múltiplos serviços.</li>
+            <li>China: centros urbanos com integração massiva de sensores, tráfego e resposta em tempo real.</li>
+            <li>Singapura e Japão: disciplina operacional em planejamento urbano orientado por dados.</li>
+          </ul>
+        </Section>
       </main>
     </div>
   );

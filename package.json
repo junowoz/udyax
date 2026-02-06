@@ -9,7 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@blueprintjs/core": "^6.7.0",
+    "@blueprintjs/icons": "^6.5.1",
+    "d3": "^7.9.0",
     "next": "16.1.1",
+    "plottable": "^3.13.0",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },

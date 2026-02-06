@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+UDYAX
 
-## Getting Started
+PHASE 1:
+Udyax é uma plataforma integrada de dados urbanos, atuando como o sistema operacional da cidade, responsável por coletar, processar, consolidar e distribuir dados provenientes de diversas fontes, como sensores IoT, câmeras de vigilância, sistemas de transporte público e serviços municipais, em um data lake, criando uma infraestrutura de dados urbanos em camadas. Utilizando Edge Computing e Big Data, Udyax permite que as cidades monitorem em tempo real o tráfego, mobilidade, consumo de energia, a gestão de resíduos, segurança pública e outros aspectos cruciais da vida urbana. Udyax suporta a tomada de decisão administrativa baseada em dados, promovendo uma cidade mais inteligente, eficiente e sustentável.
 
-First, run the development server:
+PHASE 2:
+Udyax evolui para uma plataforma de gêmeos digitais urbanos, integrando dados em tempo real com modelos 3D detalhados da cidade. Isso permite simulações avançadas para planejamento urbano, resposta a emergências e otimização de recursos. A plataforma incorpora inteligência artificial para prever padrões de tráfego, consumo de energia e outros indicadores urbanos, facilitando a gestão da cidade.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+PHASE 3:
+Udyax oferece uma interface interativa para cidadãos, Baseada em geoprocessamento, onde todas as informações são exibidas em camadas espaciais, permitindo-lhes acessar informações em tempo real sobre serviços municipais, eventos e condições urbanas, promovendo maior engajamento cívico e transparência.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+EXPLICAÇÃO SIMPLIFICADA:
+É um sistema operacional ou plataforma de gestão urbana que integra dados de diversas fontes (IoT, câmeras, serviços públicos), conectando sistemas heterogêneos para melhorar a eficiência, tomada de decisão baseada em dados e serviços ao cidadão. Uma administração tomando decisões baseada em dados, é o caminho certo para cidades mais inteligentes e sustentáveis.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Stack:
+- https://blueprintjs.com/
+- http://plottablejs.org/
 
-## Learn More
+- https://palantir.github.io/conjure/#/
+- https://github.com/palantir/resource-identifier
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+References:
+- https://palantir.github.io/
