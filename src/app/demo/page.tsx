@@ -1,5 +1,10 @@
 import HeaderNav from "@/components/HeaderNav";
-import DemoConsole from "@/components/DemoConsole";
+import dynamic from "next/dynamic";
+
+const DemoConsole = dynamic(() => import("@/components/DemoConsole"), {
+  ssr: false,
+  loading: () => <div className="udy-chart-loading">Carregando DEMO...</div>,
+});
 
 export default function DemoPage() {
   return (
