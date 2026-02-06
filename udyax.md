@@ -1,5 +1,5 @@
-- [ ] Blueprint UI for the entire application
-- [ ] Create a landing page manifesto showcasing the idea
+- [x] Blueprint UI for the entire application
+- [x] Create a landing page manifesto showcasing the idea
 - [ ] DeepResearch on similar applications
 - [ ] complete the document text with vision, problem, etc...
 - [x] Collect the necessary repos from palantir to build this.

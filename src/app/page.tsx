@@ -1,7 +1,6 @@
 import HeaderNav from "@/components/HeaderNav";
 import Section from "@/components/Section";
 import ArchitectureGrid from "@/components/ArchitectureGrid";
-import UrbanSignals from "@/components/UrbanSignals";
 import Image from "next/image";
 
 export default function Home() {
@@ -9,27 +8,30 @@ export default function Home() {
     <div className="bp6-dark udy-root">
       <HeaderNav />
       <main className="udy-main">
-        <section id="manifesto" className="udy-hero" aria-labelledby="hero-title">
+        <section id="index" className="udy-hero" aria-labelledby="hero-title">
           <div className="udy-hero-left">
-            <p className="udy-kicker">Manifesto</p>
+            <p className="udy-kicker">Index</p>
             <h1 id="hero-title" className="text-balance">
-              Infraestrutura de dados para a cidade funcionar melhor.
+              Sistema Operacional para a Cidade
             </h1>
             <p className="udy-hero-subtitle text-pretty">
-              CityOS coleta, processa, consolida e distribui dados urbanos em tempo real para operação,
-              planejamento e transparência institucional.
+              Infraestrutura que conecta dados urbanos em tempo real para
+              operação, planejamento, transparência institucional e tomada de
+              decisão.
             </p>
             <ul className="udy-bullet-list">
-              <li>Interoperabilidade entre sistemas legados e novos.</li>
-              <li>Edge computing para baixa latência e resiliência.</li>
-              <li>Governança com trilha de auditoria desde a origem.</li>
-              <li>Decisão administrativa guiada por evidências.</li>
+              <li>Ingestão multi-fonte (IoT, câmeras, serviços urbanos)</li>
+              <li>Visão operacional única da cidade, em tempo real</li>
+              <li>
+                Decisão pública com rastreabilidade: quem fez o quê, quando e
+                por quê
+              </li>
             </ul>
           </div>
           <div className="udy-hero-right" aria-hidden="true">
             <div className="udy-hero-image">
               <Image
-                src="/hero-2.png"
+                src="/hero.png"
                 alt=""
                 width={1024}
                 height={1024}
@@ -45,18 +47,22 @@ export default function Home() {
         <Section
           id="cityos"
           title="CityOS como núcleo de dados"
-          subtitle="Integração operacional, modelo urbano e distribuição confiável em uma única camada central."
+          subtitle="A cidade precisa de um núcleo."
         >
           <p className="udy-inline-manifest text-pretty">
-            Sem um núcleo de dados, a cidade opera no escuro. Com CityOS, as secretarias deixam de
-            trabalhar em silos e passam a operar sobre o mesmo contexto urbano.
+            Hoje, ela opera em silos.
+          </p>
+          <p className="udy-inline-manifest text-pretty">
+            Sem um núcleo de dados, cada secretaria enxerga apenas uma parte da
+            cidade. Com o CityOS, todos operam sobre o mesmo contexto urbano, em
+            tempo real.
           </p>
           <ArchitectureGrid />
         </Section>
 
         <Section
           id="fases"
-          title="3 atos do produto"
+          title="O produto em 3 atos"
           subtitle="Conhecer. Pensar. Compartilhar."
         >
           <div className="udy-acts-grid">
@@ -64,32 +70,54 @@ export default function Home() {
               <p className="udy-act-roman tabular-nums">I</p>
               <h3 className="text-balance">Arandu</h3>
               <p className="text-pretty">
-                Coleta e consolidação de dados urbanos em camadas de eventos, ativos e território.
+                <strong>Conhecer a cidade como ela é.</strong>
+              </p>
+              <p className="text-pretty">
+                Coleta e consolida dados urbanos em tempo real, organizados por:
+              </p>
+              <ul className="udy-bullet-list">
+                <li>eventos</li>
+                <li>ativos</li>
+                <li>território</li>
+              </ul>
+              <p className="text-pretty">
+                Arandu cria a base factual da operação urbana.
               </p>
             </article>
             <article className="bp6-card udy-act-card">
               <p className="udy-act-roman tabular-nums">II</p>
               <h3 className="text-balance">Akangatu</h3>
               <p className="text-pretty">
-                Simulações, previsão e otimização com gêmeo digital e análise de cenários.
+                <strong>Pensar antes de agir.</strong>
+              </p>
+              <p className="text-pretty">Usa dados consolidados para:</p>
+              <ul className="udy-bullet-list">
+                <li>simular cenários</li>
+                <li>prever impactos</li>
+                <li>otimizar decisões</li>
+              </ul>
+              <p className="text-pretty">
+                Akangatu transforma dados em capacidade de planejamento e
+                resposta.
               </p>
             </article>
             <article className="bp6-card udy-act-card">
               <p className="udy-act-roman tabular-nums">III</p>
               <h3 className="text-balance">Iandé</h3>
               <p className="text-pretty">
-                Camadas públicas e linguagem operacional para ampliar transparência e compreensão cidadã.
+                <strong>Compartilhar contexto.</strong>
+              </p>
+              <p className="text-pretty">Traduz dados e decisões em:</p>
+              <ul className="udy-bullet-list">
+                <li>camadas públicas</li>
+                <li>linguagem operacional clara</li>
+                <li>transparência institucional</li>
+              </ul>
+              <p className="text-pretty">
+                Iandé aproxima a gestão pública do cidadão.
               </p>
             </article>
           </div>
-        </Section>
-
-        <Section
-          id="evidencias"
-          title="Urban Signals"
-          subtitle="Visão integrada de fontes, camadas geoespaciais e indicadores urbanos em uma sala operacional."
-        >
-          <UrbanSignals />
         </Section>
 
         <Section
@@ -98,10 +126,22 @@ export default function Home() {
           subtitle="Referências de práticas públicas de dados e infraestrutura digital urbana."
         >
           <ul className="udy-cases-list">
-            <li>Estônia: X-Road como referência de interoperabilidade e soberania digital estatal.</li>
-            <li>Barcelona: Sentilo e abordagem de plataforma para dados urbanos em múltiplos serviços.</li>
-            <li>China: centros urbanos com integração massiva de sensores, tráfego e resposta em tempo real.</li>
-            <li>Singapura e Japão: disciplina operacional em planejamento urbano orientado por dados.</li>
+            <li>
+              Estônia: X-Road como referência de interoperabilidade e soberania
+              digital estatal.
+            </li>
+            <li>
+              Barcelona: Sentilo e abordagem de plataforma para dados urbanos em
+              múltiplos serviços.
+            </li>
+            <li>
+              China: centros urbanos com integração massiva de sensores, tráfego
+              e resposta em tempo real.
+            </li>
+            <li>
+              Singapura e Japão: disciplina operacional em planejamento urbano
+              orientado por dados.
+            </li>
           </ul>
         </Section>
       </main>

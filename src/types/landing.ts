@@ -1,10 +1,11 @@
 import type { IconName } from "@blueprintjs/icons";
 
-export type SectionId = "manifesto" | "cityos" | "fases" | "evidencias" | "casos";
+export type SectionId = "index" | "cityos" | "fases" | "casos";
 
 export interface NavItem {
   id: SectionId;
   label: string;
+  href: string;
 }
 
 export interface MetricItem {

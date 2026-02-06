@@ -1,16 +1,21 @@
 "use client";
 
-import { Alignment, Button, Navbar, NavbarGroup, NavbarHeading } from "@blueprintjs/core";
+import {
+  Alignment,
+  Button,
+  Navbar,
+  NavbarGroup,
+  NavbarHeading,
+} from "@blueprintjs/core";
 import { Flex } from "@blueprintjs/labs";
 import Image from "next/image";
 import type { NavItem } from "@/types/landing";
 
 const navItems: NavItem[] = [
-  { id: "manifesto", label: "Manifesto" },
-  { id: "cityos", label: "CityOS" },
-  { id: "fases", label: "3 Atos" },
-  { id: "evidencias", label: "Urban Signals" },
-  { id: "casos", label: "Referências" },
+  { id: "index", label: "Index", href: "/#index" },
+  { id: "cityos", label: "CityOS", href: "/#cityos" },
+  { id: "fases", label: "3 Atos", href: "/#fases" },
+  { id: "casos", label: "Referências", href: "/#casos" },
 ];
 
 export default function HeaderNav() {
@@ -21,14 +26,20 @@ export default function HeaderNav() {
           <NavbarGroup align={Alignment.LEFT} className="udy-nav-left">
             <NavbarHeading className="udy-brand-wrap">
               <span className="udy-brand" aria-label="UDYAX">
-                <Image src="/logo.svg" alt="UDYAX" width={140} height={34} priority />
+                <Image
+                  src="/logo.svg"
+                  alt="UDYAX"
+                  width={140}
+                  height={34}
+                  priority
+                />
               </span>
             </NavbarHeading>
           </NavbarGroup>
           <NavbarGroup align={Alignment.LEFT} className="udy-nav-center">
             <nav aria-label="Navegação principal" className="udy-anchor-nav">
               {navItems.map((item) => (
-                <a key={item.id} href={`#${item.id}`} className="udy-anchor-link">
+                <a key={item.id} href={item.href} className="udy-anchor-link">
                   {item.label}
                 </a>
               ))}
@@ -39,9 +50,9 @@ export default function HeaderNav() {
               small
               intent="primary"
               icon="grid-view"
-              text="Explorar CityOS"
+              text="Explorar Demo"
               onClick={() => {
-                document.getElementById("cityos")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                window.location.href = "/demo";
               }}
             />
           </NavbarGroup>
