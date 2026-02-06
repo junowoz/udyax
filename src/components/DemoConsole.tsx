@@ -1047,11 +1047,17 @@ export default function DemoConsole() {
               regionId: target.id,
               corridorId: CORRIDORS.find((corridor) => corridor.fromRegionId === target.id)?.id,
             }
-          : {
-              rid: target.rid,
-              regionId: target.fromRegionId,
-              corridorId: target.id,
-            };
+          : "fromRegionId" in target
+            ? {
+                rid: target.rid,
+                regionId: target.fromRegionId,
+                corridorId: target.id,
+              }
+            : {
+                rid: target.rid,
+                regionId: undefined,
+                corridorId: target.id,
+              };
 
       const newIncident = createIncident(now, kind, layer, severity, incidentSummary, targetEntity, durationTicks);
       const openEvent = createEvent(now, layer, severity, source, incidentSummary, targetEntity);
@@ -1268,11 +1274,17 @@ export default function DemoConsole() {
                 regionId: target.id,
                 corridorId: CORRIDORS.find((corridor) => corridor.fromRegionId === target.id)?.id,
               }
-            : {
-                rid: target.rid,
-                regionId: target.fromRegionId,
-                corridorId: target.id,
-              };
+            : "fromRegionId" in target
+              ? {
+                  rid: target.rid,
+                  regionId: target.fromRegionId,
+                  corridorId: target.id,
+                }
+              : {
+                  rid: target.rid,
+                  regionId: undefined,
+                  corridorId: target.id,
+                };
 
         const incidentSummary = `Alerta sintetico em ${target.name}`;
         const incident = createIncident(now, "incident", layer, severity, incidentSummary, targetEntity, 9);
@@ -1748,7 +1760,7 @@ export default function DemoConsole() {
                       </div>
 
                       <div className="udy-demo-table-wrap">
-                        <HTMLTable bordered interactive condensed striped className="udy-demo-table">
+                        <HTMLTable bordered interactive compact striped className="udy-demo-table">
                           <thead>
                             <tr>
                               <th>Hora</th>
@@ -1850,7 +1862,7 @@ export default function DemoConsole() {
                       </div>
 
                       <div className="udy-demo-table-wrap">
-                        <HTMLTable bordered striped condensed className="udy-demo-table">
+                        <HTMLTable bordered striped compact className="udy-demo-table">
                           <thead>
                             <tr>
                               <th>Timestamp</th>
@@ -1978,7 +1990,7 @@ export default function DemoConsole() {
             <ul className="udy-demo-incident-list">
               {openIncidents.map((incident) => (
                 <li key={incident.id}>
-                  <Flex flexDirection="column" gap={1} width="100%" style={{ minWidth: 0 }}>
+                  <Flex flexDirection="column" gap={1} style={{ width: "100%", minWidth: 0 }}>
                     <p>{incident.summary}</p>
                     <small>{incident.entityRid}</small>
                   </Flex>
@@ -2237,7 +2249,7 @@ export default function DemoConsole() {
             <span>Justificativa</span>
             <TextArea
               fill
-              growVertically
+              autoResize
               large
               value={playbookDialog.justification}
               onChange={(event) =>
