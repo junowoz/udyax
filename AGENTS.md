@@ -1,0 +1,1 @@
+nao rode build nem npm run dev durante sessoes, apenas lint.

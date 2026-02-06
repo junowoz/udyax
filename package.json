@@ -11,6 +11,7 @@
   "dependencies": {
     "@blueprintjs/core": "^6.7.0",
     "@blueprintjs/icons": "^6.5.1",
+    "@blueprintjs/labs": "^6.1.7",
     "d3": "^7.9.0",
     "next": "16.1.1",
     "plottable": "^3.13.0",

@@ -11,6 +11,7 @@ import {
   Tabs,
   Tag,
 } from "@blueprintjs/core";
+import { Box, Flex } from "@blueprintjs/labs";
 import { useEffect, useMemo, useRef, useState } from "react";
 import * as Plottable from "plottable";
 import type { TimeWindow } from "@/types/landing";
@@ -326,7 +327,7 @@ export default function UrbanChartPanel() {
           id="ops"
           title="Sala Operacional"
           panel={
-            <div className="udy-ops-layout">
+            <Box className="udy-ops-layout">
               <Card className="udy-map-card" elevation={1}>
                 <header className="udy-panel-head">
                   <H4>Mapa urbano em camadas</H4>
@@ -353,7 +354,7 @@ export default function UrbanChartPanel() {
                 <header className="udy-panel-head">
                   <H4>Camadas ativas</H4>
                 </header>
-                <div className="udy-layer-toggles">
+                <Box className="udy-layer-toggles">
                   {(["A", "B", "C"] as LayerKey[]).map((layer) => (
                     <Checkbox
                       key={layer}
@@ -362,8 +363,8 @@ export default function UrbanChartPanel() {
                       onChange={() => toggleLayer(layer)}
                     />
                   ))}
-                </div>
-                <div className="udy-stat-blocks">
+                </Box>
+                <Box className="udy-stat-blocks">
                   <article>
                     <span>Eventos correlacionados</span>
                     <strong className="tabular-nums">3.410/h</strong>
@@ -376,7 +377,7 @@ export default function UrbanChartPanel() {
                     <span>Tempo de resposta</span>
                     <strong className="tabular-nums">42 ms</strong>
                   </article>
-                </div>
+                </Box>
               </Card>
 
               <Card className="udy-side-card" elevation={1}>
@@ -393,7 +394,7 @@ export default function UrbanChartPanel() {
                   ))}
                 </ul>
               </Card>
-            </div>
+            </Box>
           }
         />
 
@@ -402,9 +403,11 @@ export default function UrbanChartPanel() {
           title="Séries Analíticas"
           panel={
             <div className="udy-charts-wrap">
-              <div className="udy-chart-controls">
-                <div className="udy-control-block">
-                  <span className="udy-control-label">Janela temporal</span>
+              <Flex className="udy-chart-controls" alignItems="center" justifyContent="space-between" flexWrap="wrap" gap={3}>
+                <Box className="udy-control-block">
+                  <Box asChild margin={0}>
+                    <span className="udy-control-label">Janela temporal</span>
+                  </Box>
                   <ButtonGroup>
                     {(["7d", "30d", "90d"] as TimeWindow[]).map((item) => (
                       <Button
@@ -416,8 +419,8 @@ export default function UrbanChartPanel() {
                       />
                     ))}
                   </ButtonGroup>
-                </div>
-              </div>
+                </Box>
+              </Flex>
 
               <Card className="udy-chart-card" elevation={1}>
                 <header className="udy-chart-card-head">

@@ -1,9 +1,8 @@
 import HeaderNav from "@/components/HeaderNav";
 import Section from "@/components/Section";
-import StatusPanel from "@/components/StatusPanel";
-import CityOSDefinition from "@/components/CityOSDefinition";
 import ArchitectureGrid from "@/components/ArchitectureGrid";
 import UrbanSignals from "@/components/UrbanSignals";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -12,7 +11,7 @@ export default function Home() {
       <main className="udy-main">
         <section id="manifesto" className="udy-hero" aria-labelledby="hero-title">
           <div className="udy-hero-left">
-            <p className="udy-kicker">Manifesto UDYAX</p>
+            <p className="udy-kicker">Manifesto</p>
             <h1 id="hero-title" className="text-balance">
               Infraestrutura de dados para a cidade funcionar melhor.
             </h1>
@@ -27,8 +26,19 @@ export default function Home() {
               <li>Decisão administrativa guiada por evidências.</li>
             </ul>
           </div>
-          <div className="udy-hero-right">
-            <StatusPanel />
+          <div className="udy-hero-right" aria-hidden="true">
+            <div className="udy-hero-image">
+              <Image
+                src="/hero-2.png"
+                alt=""
+                width={1024}
+                height={1024}
+                priority
+                quality={95}
+                sizes="(max-width: 1080px) 100vw, 42vw"
+                className="udy-hero-img"
+              />
+            </div>
           </div>
         </section>
 
@@ -41,8 +51,6 @@ export default function Home() {
             Sem um núcleo de dados, a cidade opera no escuro. Com CityOS, as secretarias deixam de
             trabalhar em silos e passam a operar sobre o mesmo contexto urbano.
           </p>
-          <CityOSDefinition />
-          <h3 className="udy-inline-title">Como funciona</h3>
           <ArchitectureGrid />
         </Section>
 

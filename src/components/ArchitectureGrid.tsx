@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, Icon } from "@blueprintjs/core";
+import { Box, Flex } from "@blueprintjs/labs";
 import type { ArchitectureNode } from "@/types/landing";
 
 const nodes: ArchitectureNode[] = [
@@ -41,11 +42,15 @@ export default function ArchitectureGrid() {
     <div className="udy-arch-grid" role="list" aria-label="Arquitetura funcional do CityOS">
       {nodes.map((node) => (
         <Card key={node.title} className="udy-arch-card" elevation={1} role="listitem">
-          <div className="udy-arch-head">
+          <Flex className="udy-arch-head" alignItems="center" gap={2}>
             <Icon icon={node.icon} size={18} />
-            <h3 className="text-balance">{node.title}</h3>
-          </div>
-          <p className="text-pretty">{node.description}</p>
+            <Box asChild margin={0}>
+              <h3 className="text-balance">{node.title}</h3>
+            </Box>
+          </Flex>
+          <Box asChild margin={0}>
+            <p className="text-pretty">{node.description}</p>
+          </Box>
         </Card>
       ))}
     </div>
